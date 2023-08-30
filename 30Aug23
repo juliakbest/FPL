@@ -1,0 +1,17 @@
+import arcpy
+from arcpy import env
+env.workspace = "C:\\Users\\JXB05UD\\AppData\\Roaming\\Esri\\ArcGISPro\\Favorites\\fplviewer@pmigisp.sde"
+
+in_layer = "FPL.AMS_POLE_DATA_ATTACH_MV2"
+out_layer= "POLE_PINE_FOREST.lyr"
+
+
+in_features = "SERVICECENTERNAME"
+out_layer0 ="POLE_PINE_FOREST"
+where_clause = '"Service Center" = "Pine Forest"'
+
+
+workspace = "C:\\Users\\JXB05UD\\AppData\\Roaming\\Esri\\ArcGISPro\\Favorites"
+
+arcpy.management.MakeFeatureLayer(in_features, out_layer0, where_clause, workspace)
+arcpy.management.SaveToLayerFile(in_layer, out_layer, "ABSOLUTE")
