@@ -1,0 +1,13 @@
+import arcpy
+
+#INPUT SHP
+#FIELDS OF INT:
+#FIELDS OF SORT: 
+
+rows = arcpy.SearchCursor(r'C:\Users\JXB05UD\OneDrive - NEE\Documents\ArcGIS\Projects\MyProject1\MyProject1.gdb\Pine_Forest_Poles', fields="FPLID; POLE_TAG; OWNER_NAME")
+
+for row in rows:
+    print("FPLID: {0}, Pole Tag: {1}, Owner Name: {2}".format(
+        row.getValue("FPLID"),
+        row.getValue("POLE_TAG"),
+        row.getValue("OWNER_NAME")))
